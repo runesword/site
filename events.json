@@ -1,36 +1,52 @@
 {
     "events": [
         {
-            "image": "https://via.placeholder.com/500x300/9370DB/FFFFFF?text=Torneo+Wargames",
-            "title": "Torneo de Wargames",
-            "date": "2025-11-10T16:00:00",
-            "location": "Calle Gamer 42, Toledo",
-            "description": "Un torneo épico de wargames con premios y diversión asegurada.",
+            "image": "calendar-pics/bolobowl.jpg",
+            "title": "BOLO BOWL: Concurso de Blood Bowl",
+            "date": "2025-11-15T10:00:00",
+            "location": "Centro Comercial Zoco Europa",
+            "description": "¡Llega el BOLO BOWL a Toledo!. Hidromiel, cerveza y picoteo para los participantes 🎁 Sorteos y premios en varias categorías: 🏆 3 primeros clasificados 💥 Mayor nº de touchdowns 🩸 Mayor nº de heridas 👦 Mejor clasificado menor de 18 años 🎟️ Inscripción anticipada (hasta el 15/10): 10€ 🎟️ Inscripción general: 12€ 🔥 Diversión, competición y buen ambiente asegurados",
             "available": true
         },
         {
-            "image": "https://via.placeholder.com/500x300/800080/FFFFFF?text=Workshop+Pintura",
-            "title": "Workshop de Pintura de Miniaturas",
-            "date": "2025-11-20T17:30:00",
-            "location": "Plaza de los Dados, Toledo",
-            "description": "Mejora tus habilidades de pintura en este taller práctico.",
-            "available": true
+            "image": "calendar-pics/orktober.jpg",
+            "title": "Demo: Blood Bowl",
+            "date": "2025-10-19T10:00:00",
+            "location": "Local Runesword (C. Camarín de San Cipriano, 3, Toledo)",
+            "description": "¡WAAAGH! Ya es #Orktober y en la asociación Runesword lo celebramos como se merece: ¡una quedada con Mini-Taller Especial de Pintura incluido! Apúntate a dar vida a tus orcos más brutales (o la miniatura que tú prefieras). En esta quedada, nos juntaremos para compartir nuestro hobby y sumergirnos en la pintura. ¿Qué haremos? Este mini-taller está pensado para principiantes y para quienes nunca han tocado un pincel de miniaturas. Te enseñaremos técnicas esenciales como el uso de pinturas Contrast, la magia de los Washes y el uso del Pincel Seco. ¡Dominarás los básicos para que tus miniaturas cobren vida! ¿Que ya eres un pro del pincel? ¡No hay problema! Eres más que bienvenido a unirte, compartir tus trucos y disfrutar de la compañía de otros aficionados en un ambiente relajado y divertido. ¡El plan es pasar un día genial juntos y disfrutar de este hobby que tanto nos une! ¡El pincel te espera!",
+            "available": false
         },
         {
-            "image": "https://via.placeholder.com/500x300/5E3C75/FFFFFF?text=Juegos+de+Mesa",
-            "title": "Tarde de Juegos de Mesa",
-            "date": "2025-11-30T18:00:00",
-            "location": "Casa de la Asociación, Toledo",
-            "description": "Ven a disfrutar de una tarde llena de juegos y diversión.",
-            "available": true
+            "image": "calendar-pics/demobbseptiembre.png",
+            "title": "Demo: Blood Bowl",
+            "date": "2025-09-02T18:00:00",
+            "location": "Generación X Toledo",
+            "description": "Después de la gran acogida que tuvo la anterior... REPETIMOS DEMO DE BLOOD BOWL. Una gran oportunidad para aprender a jugar o simplemente venir a pasar la tarde con nosotros jugando.",
+            "available": false
         },
         {
-            "image": "https://via.placeholder.com/500x300/CCCCCC/800080?text=Evento+Pasado",
-            "title": "Evento Pasado de Prueba",
-            "date": "2025-01-01T10:00:00",
-            "location": "Local de Prueba",
-            "description": "Este evento ya ha pasado y se debe ver solo con el botón de Eventos Pasados.",
-            "available": true
+            "image": "calendar-pics/heatagosto.jpg",
+            "title": "Heat Pedal to the medal",
+            "date": "2025-08-01T18:00:00",
+            "location": "Generación X Toledo",
+            "description": "¡Pisa el acelerador y siente el rugido del motor! No importa si eres un piloto veterano o un novato en la pista… ¡Solo necesitas nervios de acero, manos firmes al volante y muchas ganas de pasarlo en grande! No importa si eres un piloto veterano o un novato en la pista… ¡Solo necesitas nervios de acero, manos firmes al volante y muchas ganas de pasarlo en grande!",
+            "available": false
+        },
+        {
+            "image": "calendar-pics/demoktjulio.jpg",
+            "title": "Demo: Kill Team",
+            "date": "2025-07-22T18:00:00",
+            "location": "Generación X Toledo",
+            "description": "Acercate a jugar unas partidas de iniciación al hermano pequeño (pero mejorado) de Warhammer 40k. ¡Te enseñamos!",
+            "available": false
+        },
+        {
+            "image": "calendar-pics/demobbjulio.jpg",
+            "title": "Demo: Blood Bowl",
+            "date": "2025-07-08T18:00:00",
+            "location": "Generación X Toledo",
+            "description": "Ven con nosotros este martes 8 a jugar a este juego lleno de mamporros, dados y diversion. Tanto si sabes jugar como si quieres aprender, apuntate a pasar la tarde. ¡Que Nuffle reparta suerte!",
+            "available": false
         }
     ]
 }

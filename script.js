@@ -129,9 +129,8 @@ document.addEventListener('DOMContentLoaded', () => {
         "past-event-pics/1.jpg",
         "past-event-pics/2.jpg",
         "past-event-pics/3.jpg",
-        "past-event-pics/4.jpg",
-        "past-event-pics/5.jpg",
-        "past-event-pics/6.jpg"
+        "past-event-pics/4.png",
+        "past-event-pics/5.jpg"
     ];
 
     const carouselTrack = document.getElementById('photo-carousel');

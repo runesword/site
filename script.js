@@ -6,79 +6,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const showPastEventsButton = document.getElementById('show-past-events');
     const today = new Date();
 
-    // --- DATOS DE EVENTOS (Carga LOCAL) ---
-    // NOTA: Se ha añadido el campo "available" a cada evento.
-    const eventsData = [
-        {
-            "image": "https://bbtournaments.es/files/tournament%20picture/Bolo%20Bowl%20Toledo%20I-2025-09-22-21-38-05.jpg",
-            "title": "Torneo de Wargames",
-            "date": "2025-11-10T16:00:00",
-            "location": "Calle Gamer 42, Toledo",
-            "description": "Un torneo épico de wargames con premios y diversión asegurada.",
-            "available": true // ¡Inscripción disponible!
-        },
-        {
-            "image": "https://bbtournaments.es/files/tournament%20picture/Bolo%20Bowl%20Toledo%20I-2025-09-22-21-38-05.jpg",
-            "title": "Torneo de Wargames",
-            "date": "2025-11-10T16:00:00",
-            "location": "Calle Gamer 42, Toledo",
-            "description": "Un torneo épico de wargames con premios y diversión asegurada.",
-            "available": true // ¡Inscripción disponible!
-        },
-        {
-            "image": "https://via.placeholder.com/500x300/800080/FFFFFF?text=Workshop+Pintura",
-            "title": "Workshop de Pintura de Miniaturas",
-            "date": "2025-11-20T17:30:00",
-            "location": "Plaza de los Dados, Toledo",
-            "description": "Mejora tus habilidades de pintura en este taller práctico.",
-            "available": false // Inscripción NO disponible
-        },
-        {
-            "image": "https://via.placeholder.com/500x300/5E3C75/FFFFFF?text=Juegos+de+Mesa",
-            "title": "Tarde de Juegos de Mesa",
-            "date": "2025-11-30T18:00:00",
-            "location": "Casa de la Asociación, Toledo",
-            "description": "Ven a disfrutar de una tarde llena de juegos y diversión.",
-            "available": true // ¡Inscripción disponible!
-        },
-        {
-            "image": "https://weezevent.com/wp-content/uploads/2023/08/28153716/organizar-una-velada-de-juegos-de-mesa.jpg",
-            "title": "Evento Pasado de Prueba",
-            "date": "2025-01-01T10:00:00",
-            "location": "Local de Prueba",
-            "description": "Este evento ya ha pasado y se debe ver solo con el botón de Eventos Pasados.",
-            "available": false // Ya pasó, no está disponible
-        },
-        {
-            "image": "https://weezevent.com/wp-content/uploads/2023/08/28153716/organizar-una-velada-de-juegos-de-mesa.jpg",
-            "title": "Evento Pasado de Prueba",
-            "date": "2025-01-01T10:00:00",
-            "location": "Local de Prueba",
-            "description": "Este evento ya ha pasado y se debe ver solo con el botón de Eventos Pasados.",
-            "available": false // Ya pasó, no está disponible
-        },
-        {
-            "image": "https://weezevent.com/wp-content/uploads/2023/08/28153716/organizar-una-velada-de-juegos-de-mesa.jpg",
-            "title": "Evento Pasado de Prueba",
-            "date": "2025-01-01T10:00:00",
-            "location": "Local de Prueba",
-            "description": "Este evento ya ha pasado y se debe ver solo con el botón de Eventos Pasados.",
-            "available": false // Ya pasó, no está disponible
-        },
-        {
-            "image": "https://weezevent.com/wp-content/uploads/2023/08/28153716/organizar-una-velada-de-juegos-de-mesa.jpg",
-            "title": "Evento Pasado de Prueba",
-            "date": "2025-01-01T10:00:00",
-            "location": "Local de Prueba",
-            "description": "Este evento ya ha pasado y se debe ver solo con el botón de Eventos Pasados.",
-            "available": false // Ya pasó, no está disponible
-        }
-    ];
-    // ------------------------------------
+    // --- DATOS DE EVENTOS (Carga LOCAL) ELIMINADOS ---
+    // Los datos ahora se cargarán mediante la función fetch desde events.json
+    // ----------------------------------------------------
 
 
     // Función para crear la tarjeta de evento
-    // Se ha eliminado el parámetro 'isUpcoming' ya que la disponibilidad se basa ahora en 'event.available'
     const createEventCard = (event) => {
         const eventDate = new Date(event.date);
 
@@ -114,8 +47,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Función principal para cargar y clasificar eventos
     const loadEvents = async () => {
-        // ... (Código sin cambios) ...
 
+        // --- CÓDIGO ACTIVADO PARA CARGAR DESDE events.json  ---
+        let eventsData;
+        try {
+            const response = await fetch('events.json');
+            if (!response.ok) {
+                // Lanza un error si la respuesta no es 200 (OK)
+                throw new Error('Error al cargar events.json: ' + response.statusText);
+            }
+            const data = await response.json();
+            // Asume que el JSON tiene una clave 'events'
+            eventsData = data.events;
+
+        } catch (error) {
+            console.error('Fallo al procesar los eventos:', error);
+            upcomingEventsContainer.innerHTML = '<p>Error al cargar los eventos. Inténtalo de nuevo más tarde.</p>';
+            return;
+        }
+        // ----------------------------------------------------------------
+
+        // Usamos eventsData cargado mediante fetch
         upcomingEventsContainer.innerHTML = '';
         pastEventsContainer.innerHTML = '';
 
@@ -125,6 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (!isUpcoming) {
                 // Eventos pasados: siempre deshabilitados si ya pasaron
+                // Se asegura que el campo 'available' sea false para el botón
                 pastEventsContainer.appendChild(createEventCard({ ...event, available: false }));
             } else {
                 // Eventos próximos: usan el campo 'available' del JSON

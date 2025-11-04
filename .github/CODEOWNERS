@@ -1,0 +1,8 @@
+# CODEOWNERS: only @runesword can approve PRs
+# Location: .github/CODEOWNERS
+# This file assigns ownership of all files to the user @runesword so that
+# when "Require review from Code Owners" is enabled in branch protection,
+# only @runesword will be requested as reviewer and their approval will be
+# required.
+
+* @runesword

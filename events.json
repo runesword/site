@@ -1,0 +1,36 @@
+{
+    "events": [
+        {
+            "image": "https://via.placeholder.com/500x300/9370DB/FFFFFF?text=Torneo+Wargames",
+            "title": "Torneo de Wargames",
+            "date": "2025-11-10T16:00:00",
+            "location": "Calle Gamer 42, Toledo",
+            "description": "Un torneo épico de wargames con premios y diversión asegurada.",
+            "available": true
+        },
+        {
+            "image": "https://via.placeholder.com/500x300/800080/FFFFFF?text=Workshop+Pintura",
+            "title": "Workshop de Pintura de Miniaturas",
+            "date": "2025-11-20T17:30:00",
+            "location": "Plaza de los Dados, Toledo",
+            "description": "Mejora tus habilidades de pintura en este taller práctico.",
+            "available": true
+        },
+        {
+            "image": "https://via.placeholder.com/500x300/5E3C75/FFFFFF?text=Juegos+de+Mesa",
+            "title": "Tarde de Juegos de Mesa",
+            "date": "2025-11-30T18:00:00",
+            "location": "Casa de la Asociación, Toledo",
+            "description": "Ven a disfrutar de una tarde llena de juegos y diversión.",
+            "available": true
+        },
+        {
+            "image": "https://via.placeholder.com/500x300/CCCCCC/800080?text=Evento+Pasado",
+            "title": "Evento Pasado de Prueba",
+            "date": "2025-01-01T10:00:00",
+            "location": "Local de Prueba",
+            "description": "Este evento ya ha pasado y se debe ver solo con el botón de Eventos Pasados.",
+            "available": true
+        }
+    ]
+}

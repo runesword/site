@@ -1,0 +1,25 @@
+{
+    "events": [
+        {
+            "image": "https://via.placeholder.com/500x300",
+            "title": "Torneo de Wargames",
+            "date": "2025-11-10",
+            "location": "Calle Gamer 42, Toledo",
+            "description": "Un torneo épico de wargames con premios y diversión asegurada."
+        },
+        {
+            "image": "https://via.placeholder.com/500x300",
+            "title": "Workshop de Pintura de Miniaturas",
+            "date": "2025-11-20",
+            "location": "Plaza de los Dados, Toledo",
+            "description": "Mejora tus habilidades de pintura en este taller práctico."
+        },
+        {
+            "image": "https://via.placeholder.com/500x300",
+            "title": "Tarde de Juegos de Mesa",
+            "date": "2025-11-30",
+            "location": "Casa de la Asociación, Toledo",
+            "description": "Ven a disfrutar de una tarde llena de juegos y diversión."
+        }
+    ]
+}

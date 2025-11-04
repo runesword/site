@@ -3,37 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Runesword</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Runesword - Asociación Toledana</title>
+    <style>
+        :root {
+            --main-purple: #6a0dad;
+            --main-white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--main-white);
+            background-color: var(--main-purple);
+            scroll-behavior: smooth;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        header a {
+            display: inline-block;
+            text-decoration: none;
+            background-color: var(--main-white);
+            color: var(--main-purple);
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .advantages {
+            padding: 4rem 2rem;
+            background: url('https://via.placeholder.com/1500x800') no-repeat center center/cover;
+        }
+
+        .advantages ul {
+            list-style: none;
+        }
+
+        .advantages ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .events {
+            background-color: var(--main-white);
+            color: var(--main-purple);
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+        }
+
+        .events .event {
+            border-bottom: 1px solid var(--main-purple);
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .carousel-wrapper {
+            margin: 2rem auto;
+            max-width: 800px;
+        }
+
+        .carousel img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: var(--main-purple);
+            color: var(--main-white);
+        }
+    </style>
 </head>
 <body>
-  <header>
-      <h1>Runesword</h1>
-      <h2>Asociación Toledana abierta a todos con juegos de mesa, wargames, rol y TCG.</h2>
-      <a class="cta" href="mailto:asociacionrunesword@gmail.com">Quiero hacerme socio</a>
-  </header>
-  <main>
-      <section id="ventajas">
-          <h2>Ventajas de ser socio</h2>
-          <ul>
-              <li>Acceso a local de la asociación con invitados</li>
-              <li>Acceso a todo el catálogo de juegos de mesa de la asociación</li>
-              <li>Servicio de préstamo de juegos de mesa</li>
-              <li>Descuentos en tiendas asociadas</li>
-              <li>Actividades, talleres y concursos exclusivos</li>
-              <li>Comunidad activa</li>
-          </ul>
-      </section>
-      <section id="eventos">
-          <h2>Próximos eventos</h2>
-          <ul id="event-list"></ul>
-          <button id="eventos-pasados">Ver eventos pasados</button>
-      </section>
-      <section id="galeria">
-          <h2>Galería de fotos</h2>
-          <div id="carousel"></div>
-      </section>
-  </main>
-  <script src="script.js"></script>
+    <header>
+        <h1>Runesword</h1>
+        <p>Asociación Toledana abierta a todos con juegos de mesa, wargames, rol y TCG.</p>
+        <a href="mailto:asociacionrunesword@gmail.com">Quiero hacerme socio</a>
+    </header>
+
+    <section class="advantages">
+        <h2>Ventajas de ser socio</h2>
+        <ul>
+            <li>Acceso a local de la asociación con invitados</li>
+            <li>Acceso a todo el catálogo de juegos de mesa de la asociación</li>
+            <li>Servicio de préstamo de juegos de mesa</li>
+            <li>Descuentos en tiendas asociadas</li>
+            <li>Actividades, talleres y concursos exclusivos</li>
+            <li>Comunidad activa</li>
+        </ul>
+    </section>
+
+    <section class="events">
+        <h2>Próximos Eventos</h2>
+        <div id="events-list"></div>
+        <button onclick="showPastEvents()">Ver eventos pasados</button>
+    </section>
+
+    <section class="carousel-wrapper">
+        <h2>Fotografías de Eventos</h2>
+        <div class="carousel">
+            <img src="https://via.placeholder.com/800x400" alt="Evento 1">
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Runesword Asociación Toledana</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', loadEvents);
+
+        function loadEvents() {
+            fetch('events.json')
+                .then(response => response.json())
+                .then(data => {
+                    const today = new Date();
+                    const eventsDiv = document.getElementById('events-list');
+                    eventsDiv.innerHTML = '';
+
+                    const upcomingEvents = data.events.filter(event => new Date(event.date) >= today);
+                    upcomingEvents.forEach(event => {
+                        const eventHTML = `
+                            <div class="event">
+                                <img src="${event.image}" alt="${event.title}" />
+                                <h3>${event.title}</h3>
+                                <p>${event.date} - ${event.location}</p>
+                                <p>${event.description}</p>
+                            </div>
+                        `;
+                        eventsDiv.innerHTML += eventHTML;
+                    });
+                });
+        }
+
+        function showPastEvents() {
+            fetch('events.json')
+                .then(response => response.json())
+                .then(data => {
+                    const today = new Date();
+                    const eventsDiv = document.getElementById('events-list');
+                    eventsDiv.innerHTML = '';
+
+                    const pastEvents = data.events.filter(event => new Date(event.date) < today);
+                    pastEvents.forEach(event => {
+                        const eventHTML = `
+                            <div class="event">
+                                <img src="${event.image}" alt="${event.title}" />
+                                <h3>${event.title}</h3>
+                                <p>${event.date} - ${event.location}</p>
+                                <p>${event.description}</p>
+                            </div>
+                        `;
+                        eventsDiv.innerHTML += eventHTML;
+                    });
+                });
+        }
+    </script>
 </body>
 </html>

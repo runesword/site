@@ -335,22 +335,31 @@ h2 {
 
 .carousel-container {
     width: 90%;
-    max-width: 800px;
+    max-width: 600px;
     overflow: hidden;
     position: relative;
     border-radius: 10px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    max-height: 900px;
+    height: 900px;
 }
 
 .carousel-track {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    height: 100%;
+    align-items: center;
 }
 
 .carousel-slide {
     width: 100%;
     flex-shrink: 0;
-    height: auto;
+    height: 100%;
+    object-fit: contain;
+    /* Asegura que la imagen completa sea visible, manteniendo su proporción */
+    /* Puedes añadir un color de fondo al .carousel-container si quieres que las barras sean de un color específico */
+    background-color: #000;
+    /* Opcional: fondo negro para las barras si la imagen no llena todo */
 }
 
 .carousel-button {

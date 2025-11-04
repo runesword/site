@@ -1,6 +1,14 @@
 {
     "events": [
         {
+            "image": "calendar-pics/tallerpinturanoviembre.jpg",
+            "title": "Taller de Pintura: Iniciación a pintura de Warhammer",
+            "date": "2025-11-29T10:00:00",
+            "location": "Centro Comercial Abadía Toledo",
+            "description": "¿Te da reparo o no sabes cómo empezar a pintar tus miniaturas? Este taller es EXCLUSIVO para principiantes y te da todas las herramientas para empezar en el hobby.Nos enfocaremos en los fundamentos básicos (preparación, imprimación, washes y pincel seco) para que consigas resultados geniales en una sola mañana. Lo que Incluye (¡Te lo llevas todo! 🎁) 2 Figuras de Warhammer: Para practicar y llevarte tu primera miniatura terminada. Pincel de Calidad: Para seguir pintando en casa. Material de Taller: Uso de todas las pinturas, pegamento y herramientas. ⚠️ Detalles Rápidos Dirigido a: Principiantes totales (mayores de 15 años). Enfoque: 100% práctico y guiado. ¡Inscríbete y da vida a tus ejércitos!",
+            "available": true
+        },
+        {
             "image": "calendar-pics/bolobowl.jpg",
             "title": "BOLO BOWL: Torneo de Blood Bowl",
             "date": "2025-11-15T10:00:00",
@@ -10,7 +18,7 @@
         },
         {
             "image": "calendar-pics/orktober.png",
-            "title": "Demo: Blood Bowl",
+            "title": "Taller de Pintura: Especial ORKTOBER",
             "date": "2025-10-19T10:00:00",
             "location": "Local Runesword (C. Camarín de San Cipriano, 3, Toledo)",
             "description": "¡WAAAGH! Ya es #Orktober y en la asociación Runesword lo celebramos como se merece: ¡una quedada con Mini-Taller Especial de Pintura incluido! Apúntate a dar vida a tus orcos más brutales (o la miniatura que tú prefieras). En esta quedada, nos juntaremos para compartir nuestro hobby y sumergirnos en la pintura. ¿Qué haremos? Este mini-taller está pensado para principiantes y para quienes nunca han tocado un pincel de miniaturas. Te enseñaremos técnicas esenciales como el uso de pinturas Contrast, la magia de los Washes y el uso del Pincel Seco. ¡Dominarás los básicos para que tus miniaturas cobren vida! ¿Que ya eres un pro del pincel? ¡No hay problema! Eres más que bienvenido a unirte, compartir tus trucos y disfrutar de la compañía de otros aficionados en un ambiente relajado y divertido. ¡El plan es pasar un día genial juntos y disfrutar de este hobby que tanto nos une! ¡El pincel te espera!",

@@ -1,187 +1,90 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Runesword - Asociación Toledana</title>
-    <style>
-        :root {
-            --main-purple: #6a0dad;
-            --main-white: #ffffff;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--main-white);
-            background-color: var(--main-purple);
-            scroll-behavior: smooth;
-        }
-
-        header {
-            text-align: center;
-            padding: 2rem;
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        header p {
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-        }
-
-        header a {
-            display: inline-block;
-            text-decoration: none;
-            background-color: var(--main-white);
-            color: var(--main-purple);
-            padding: 0.75rem 1.5rem;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-
-        section {
-            padding: 2rem;
-            text-align: center;
-        }
-
-        .advantages {
-            padding: 4rem 2rem;
-            background: url('https://via.placeholder.com/1500x800') no-repeat center center/cover;
-        }
-
-        .advantages ul {
-            list-style: none;
-        }
-
-        .advantages ul li {
-            margin-bottom: 0.5rem;
-        }
-
-        .events {
-            background-color: var(--main-white);
-            color: var(--main-purple);
-            padding-top: 4rem;
-            padding-bottom: 4rem;
-        }
-
-        .events .event {
-            border-bottom: 1px solid var(--main-purple);
-            padding-bottom: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .carousel-wrapper {
-            margin: 2rem auto;
-            max-width: 800px;
-        }
-
-        .carousel img {
-            width: 100%;
-            border-radius: 10px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 1rem;
-            background-color: var(--main-purple);
-            color: var(--main-white);
-        }
-    </style>
+    <title>Runesword - Asociación Toledana de Juegos </title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
 </head>
+
 <body>
-    <header>
-        <h1>Runesword</h1>
-        <p>Asociación Toledana abierta a todos con juegos de mesa, wargames, rol y TCG.</p>
-        <a href="mailto:asociacionrunesword@gmail.com">Quiero hacerme socio</a>
-    </header>
 
-    <section class="advantages">
-        <h2>Ventajas de ser socio</h2>
-        <ul>
-            <li>Acceso a local de la asociación con invitados</li>
-            <li>Acceso a todo el catálogo de juegos de mesa de la asociación</li>
-            <li>Servicio de préstamo de juegos de mesa</li>
-            <li>Descuentos en tiendas asociadas</li>
-            <li>Actividades, talleres y concursos exclusivos</li>
-            <li>Comunidad activa</li>
-        </ul>
-    </section>
-
-    <section class="events">
-        <h2>Próximos Eventos</h2>
-        <div id="events-list"></div>
-        <button onclick="showPastEvents()">Ver eventos pasados</button>
-    </section>
-
-    <section class="carousel-wrapper">
-        <h2>Fotografías de Eventos</h2>
-        <div class="carousel">
-            <img src="https://via.placeholder.com/800x400" alt="Evento 1">
+    <section id="inicio" class="section main-view">
+        <div class="main-content">
+            <div class="logo-placeholder">
+                <img src="assets/logo.png" alt="Logo de Runesword" class="logo-image">
+            </div>
+            <h1 class="visually-hidden">Runesword</h1>
+            <p class="description">
+                Asociación Toledana abierta a todos con juegos de mesa, wargames, rol y TCG.
+            </p>
+            <a href="mailto:asociacionrunesword@gmail.com" class="cta-button">
+                Quiero hacerme socio
+            </a>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 Runesword Asociación Toledana</p>
-    </footer>
+    <section id="ventajas" class="section benefits-section hidden">
+        <div class="benefits-overlay">
+            <h2>Ventajas de ser Socio</h2>
+            <ul class="benefits-list">
+                <li><i class="fas fa-key"></i> Acceso a local de la asociación con invitados</li>
+                <li><i class="fas fa-book-open"></i> Acceso a todo el catálogo de juegos de mesa de la asociación</li>
+                <li><i class="fas fa-exchange-alt"></i> Servicio de préstamo de juegos de mesa</li>
+                <li><i class="fas fa-tags"></i> Descuentos en tiendas asociadas</li>
+                <li><i class="fas fa-trophy"></i> Actividades, talleres y concursos exclusivos</li>
+                <li><i class="fas fa-users"></i> Comunidad activa</li>
+            </ul>
+            <p class="membership-fee">
+                ¡Por solo 12€ al año!
+            </p>
+        </div>
+    </section>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', loadEvents);
+    <section id="eventos" class="section events-section hidden">
+        <h2>Próximos Eventos</h2>
+        <div class="events-container" id="upcoming-events">
+        </div>
+        <button id="show-past-events" class="secondary-button">
+            Ver anteriores
+        </button>
+        <div class="events-container past-events-container" id="past-events" style="display: none;">
+        </div>
+    </section>
 
-        function loadEvents() {
-            fetch('events.json')
-                .then(response => response.json())
-                .then(data => {
-                    const today = new Date();
-                    const eventsDiv = document.getElementById('events-list');
-                    eventsDiv.innerHTML = '';
+    <section id="galeria" class="section gallery-section hidden">
+        <h2>Galería</h2>
+        <div class="carousel-container">
+            <div class="carousel-track" id="photo-carousel">
+            </div>
+            <button class="carousel-button prev" aria-label="Anterior">&lt;</button>
+            <button class="carousel-button next" aria-label="Siguiente">&gt;</button>
+        </div>
+    </section>
 
-                    const upcomingEvents = data.events.filter(event => new Date(event.date) >= today);
-                    upcomingEvents.forEach(event => {
-                        const eventHTML = `
-                            <div class="event">
-                                <img src="${event.image}" alt="${event.title}" />
-                                <h3>${event.title}</h3>
-                                <p>${event.date} - ${event.location}</p>
-                                <p>${event.description}</p>
-                            </div>
-                        `;
-                        eventsDiv.innerHTML += eventHTML;
-                    });
-                });
-        }
+    <section id="contacto" class="section contact-section hidden">
+        <h2>Contacta con Nosotros</h2>
+        <div class="social-links">
+            <a href="mailto:asociacionrunesword@gmail.com" target="_blank" aria-label="Email de Contacto">
+                <i class="fas fa-envelope fa-3x"></i>
+                <span>Email</span>
+            </a>
+            <a href="https://www.instagram.com/asociacionrunesword/" target="_blank" aria-label="Perfil de Instagram">
+                <i class="fab fa-instagram fa-3x"></i>
+                <span>Instagram</span>
+            </a>
+            <a href="https://discord.gg/9kJXv9JSXb" target="_blank" aria-label="Servidor de Discord">
+                <i class="fab fa-discord fa-3x"></i>
+                <span>Discord</span>
+            </a>
+        </div>
+    </section>
 
-        function showPastEvents() {
-            fetch('events.json')
-                .then(response => response.json())
-                .then(data => {
-                    const today = new Date();
-                    const eventsDiv = document.getElementById('events-list');
-                    eventsDiv.innerHTML = '';
-
-                    const pastEvents = data.events.filter(event => new Date(event.date) < today);
-                    pastEvents.forEach(event => {
-                        const eventHTML = `
-                            <div class="event">
-                                <img src="${event.image}" alt="${event.title}" />
-                                <h3>${event.title}</h3>
-                                <p>${event.date} - ${event.location}</p>
-                                <p>${event.description}</p>
-                            </div>
-                        `;
-                        eventsDiv.innerHTML += eventHTML;
-                    });
-                });
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,506 @@
+/* Variables de color */
+:root {
+    --primary-color: #800080;
+    /* Morado Oscuro Intenso */
+    --secondary-color: #9370DB;
+    /* Morado Claro / Lavanda */
+    --blue-color: #4169E1;
+    /* Azul (Para el gradiente) */
+    --accent-color: #c0d4ff;
+    /* Rosa Suave (para CTA o detalles) */
+    --text-light: #FFFFFF;
+    --text-dark: #333333;
+    --bg-light: #F4F4F9;
+}
+
+/* Base y tipografía */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+    background-color: var(--bg-light);
+
+    /* 1. CONTENEDOR PRINCIPAL: HABILITAR SCROLL SNAP */
+    scroll-snap-type: y mandatory;
+    /* 'y' para vertical, 'mandatory' para forzar el ajuste */
+    scroll-behavior: smooth;
+    /* Opcional: Hace que el scroll sea más suave */
+}
+
+/* Estilos de las secciones generales */
+.section {
+    min-height: 100vh;
+    padding: 60px 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    /* 2. HIJOS: DEFINIR EL PUNTO DE ANCLAJE */
+    scroll-snap-align: start;
+    /* Hace que la parte superior de la sección se alinee con la parte superior del viewport */
+
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Efecto Scroll Reveal */
+.hidden {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h2 {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+/* 1. Vista Principal */
+.main-view {
+    /* GRADIENTE: De Azul a Morado Oscuro */
+    background: linear-gradient(135deg, var(--blue-color), var(--primary-color));
+    color: var(--text-light);
+    height: 100vh;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.main-content {
+    max-width: 800px;
+}
+
+.logo-placeholder {
+    margin-bottom: 20px;
+}
+
+/* ESTILOS DEL LOGO MODIFICADOS: Mayor tamaño por defecto (escritorio) */
+.logo-image {
+    width: 350px;
+    /* Tamaño más grande para escritorio */
+    height: 350px;
+    object-fit: contain;
+
+    border: 3px solid var(--text-light);
+    border-radius: 50%;
+    padding: 15px;
+    /* Más padding para el logo grande */
+    background-color: transparent;
+}
+
+/* Fin de estilos modificados */
+
+.main-view h1 {
+    font-size: 4em;
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--text-dark);
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: #FF69B4;
+    /* Rosa más oscuro al pasar el ratón */
+    transform: translateY(-2px);
+}
+
+/* 2. Ventajas de ser socio */
+.benefits-section {
+    background-image: url('https://via.placeholder.com/1200x800/800080/FFFFFF?text=Fondo+Runesword');
+    /* Imagen estática de fondo */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* Efecto Parallax */
+    color: var(--text-light);
+}
+
+.benefits-overlay {
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 900px;
+}
+
+.benefits-overlay h2 {
+    color: var(--accent-color);
+    margin-bottom: 30px;
+}
+
+.membership-fee {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: var(--text-light);
+    /* Blanco para destacar */
+    background-color: var(--secondary-color);
+    /* Fondo morado claro */
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    /* Espacio antes de la lista */
+    display: inline-block;
+    /* Ajusta el ancho al contenido */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.benefits-list {
+    list-style: none;
+    text-align: left;
+    font-size: 1.1em;
+}
+
+.benefits-list li {
+    margin-bottom: 15px;
+    padding-left: 30px;
+    position: relative;
+}
+
+.benefits-list li i {
+    color: var(--secondary-color);
+    position: absolute;
+    left: 0;
+    font-size: 1.2em;
+}
+
+/* 3. Próximos Eventos */
+.events-section {
+    background-color: var(--bg-light);
+}
+
+.events-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 30px;
+}
+
+.event-card {
+    background-color: var(--text-light);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+}
+
+.event-card img {
+    width: 100%;
+    /* Ocupa el 100% del ancho de la tarjeta */
+    height: 250px;
+    /* Altura fija para hacerla cuadrada o casi cuadrada en relación al ancho */
+    /* Usar aspect-ratio es la forma moderna, pero height: fixed también funciona bien aquí */
+    /* aspect-ratio: 1 / 1; */
+    /* Alternativa moderna y flexible */
+    object-fit: cover;
+    /* Recorta la imagen para que cubra el espacio sin distorsionarse */
+}
+
+.event-info {
+    padding: 20px;
+}
+
+.event-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.event-info p {
+    margin-bottom: 8px;
+    font-size: 0.95em;
+}
+
+.event-info .date,
+.event-info .location {
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.enroll-button {
+    display: block;
+    width: 100%;
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color: var(--accent-color);
+    /* Color rosa suave */
+    color: var(--primary-color);
+    /* Texto en morado oscuro */
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    border: 2px solid var(--accent-color);
+}
+
+.enroll-button:hover {
+    background-color: var(--secondary-color);
+    /* Cambio a morado claro al pasar el ratón */
+    color: var(--text-light);
+    /* Texto blanco al pasar el ratón */
+    border-color: var(--secondary-color);
+}
+
+.enroll-button.disabled {
+    background-color: #CCCCCC;
+    /* Fondo gris */
+    color: #666666;
+    /* Texto gris más oscuro */
+    border-color: #CCCCCC;
+    cursor: not-allowed;
+    /* Muestra el cursor de "prohibido" */
+    opacity: 0.7;
+    pointer-events: none;
+    /* Deshabilita el enlace (para Chrome/Edge) */
+    transform: none;
+    /* Asegura que no se mueva si hereda un transform */
+}
+
+.enroll-button.disabled:hover {
+    background-color: #CCCCCC;
+    /* Mantiene el gris al pasar el ratón */
+    color: #666666;
+    border-color: #CCCCCC;
+}
+
+.secondary-button {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.secondary-button:hover {
+    background-color: var(--secondary-color);
+}
+
+.past-events-container {
+    margin-top: 30px;
+    border-top: 2px dashed var(--secondary-color);
+    padding-top: 30px;
+}
+
+/* 4. Galería de Fotos (Carrusel) */
+.gallery-section {
+    background-color: var(--primary-color);
+    min-height: auto;
+}
+
+.gallery-section h2 {
+    color: var(--text-light);
+}
+
+.carousel-container {
+    width: 90%;
+    max-width: 800px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    width: 100%;
+    flex-shrink: 0;
+    height: auto;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 1.5em;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
+/* 5. SECCIÓN CONTACTO */
+.contact-section {
+    min-height: 50vh;
+    /* Ajuste para que no ocupe toda la pantalla, solo lo necesario */
+    background-color: var(--bg-light);
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+
+.contact-section h2 {
+    margin-bottom: 40px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    /* Espacio entre los iconos */
+    width: 100%;
+    max-width: 400px;
+}
+
+.social-links a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--secondary-color);
+    transform: scale(1.1);
+    /* Efecto al pasar el ratón */
+}
+
+.social-links i {
+    margin-bottom: 10px;
+}
+
+.social-links span {
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+/* Media Queries para Responsive Design */
+
+/* Tablet (768px) */
+@media (max-width: 768px) {
+    .main-view h1 {
+        font-size: 3em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    .section {
+        padding: 40px 5%;
+    }
+
+    .benefits-list li {
+        font-size: 1em;
+    }
+
+    /* El logo se reduce en tablet */
+    .logo-image {
+        width: 140px;
+        height: 140px;
+        padding: 12px;
+    }
+}
+
+/* Móvil (480px) */
+@media (max-width: 480px) {
+    .main-view h1 {
+        font-size: 2.5em;
+    }
+
+    .description {
+        font-size: 1em;
+    }
+
+    .cta-button {
+        padding: 12px 25px;
+        font-size: 0.9em;
+    }
+
+    .benefits-overlay {
+        padding: 30px 20px;
+    }
+
+    .events-container {
+        grid-template-columns: 1fr;
+    }
+
+    .carousel-button {
+        width: 30px;
+        height: 30px;
+        font-size: 1.2em;
+    }
+
+    /* El logo se reduce más en móvil */
+    .logo-image {
+        width: 100px;
+        height: 100px;
+        padding: 10px;
+    }
+
+    /* Contacto en Móvil */
+    .social-links {
+        gap: 30px;
+    }
+
+    .social-links i {
+        font-size: 2.5em !important;
+        /* Asegurar que los iconos se vean bien */
+    }
+
+    .social-links span {
+        font-size: 0.9em;
+    }
+}

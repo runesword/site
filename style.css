@@ -255,6 +255,13 @@ h2 {
     color: var(--secondary-color);
 }
 
+.event-button {
+    margin-top: 15px;
+    width: 100%;
+    /* Para que el botón ocupe todo el ancho en la tarjeta */
+    text-align: center;
+}
+
 .enroll-button {
     display: block;
     width: 100%;
